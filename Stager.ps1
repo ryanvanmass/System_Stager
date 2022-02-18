@@ -25,12 +25,14 @@ winget install --id Parsec.Parsec
 ## For Testing Comment out Tailscale Install and Uncomment the bellow Line
 Set-DnsClientServerAddress -InterfaceAlias * -ServerAddresses 192.168.2.95
 
-
 #Power Toys
 winget install --id Microsoft.PowerToys
 
 # SysInternals
 winget install sysinternals
+
+# Git CLI for Windows
+winget install --id Git.Git
 
 # Screen Connect
 Write-Output "Please Enter ScreenConnect Instance domain (https://***.screenconnect.com)"
@@ -39,7 +41,7 @@ $ScreenConnect_URL = Read-Host
 [system.Diagnostics.Process]::Start("chrome","https://$ScreenConnect_URL.screenconnect.com")
 
 # WSL
-wsl --install
+#wsl --install
 
 
 
@@ -54,3 +56,4 @@ $SMB_Password = Read-Host
 net use O: \\slave1.local\Olympus /User:$SMB_Username $SMB_Password
 net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password
 net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password
+Pause
