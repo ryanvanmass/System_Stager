@@ -4,3 +4,6 @@
 
 # Ideas
 * Auto Change Wallpaper
+
+
+# Currently Adding Network Shares Does not work
