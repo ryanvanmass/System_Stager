@@ -53,9 +53,9 @@ $SMB_Username = Read-Host
 Write-Output "Enter Network Share Password"
 $SMB_Password = Read-Host
 
-$User_Password= whoami
+$User_Name= whoami
 
-RunAs /User:$SMB_Username "net use O: \\slave1.local\Olympus /User:$SMB_Username $SMB_Password"
-RunAs /User:$SMB_Username "net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password"
-RunAs /User:$SMB_Username "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
+RunAs /User:$User_Name "net use O: \\slave1.local\Olympus /User:$SMB_Username $SMB_Password"
+RunAs /User:$User_Name "net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password"
+RunAs /User:$User_Name "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
 Pause
