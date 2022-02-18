@@ -4,6 +4,8 @@
 
 # Ideas
 * Auto Change Wallpaper
+* Clean Up Desktop Icons
+
 
 
 # Currently Adding Network Shares Does not work
