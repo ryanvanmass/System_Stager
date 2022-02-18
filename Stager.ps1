@@ -16,11 +16,15 @@ winget install --id Google.Chrome
 winget install --id Parsec.Parsec
 
 # Tailscale Tail 
-winget install --id Tailscale.Tailscale
-Write-Output "Please Log Into Tailscale Before procceding"
+#winget install --id Tailscale.Tailscale
+#Write-Output "Please Log Into Tailscale Before procceding"
 
-C:\'Program Files (x86)'\'Tailscale IPN'\tailscale.exe up
-Pause
+#C:\'Program Files (x86)'\'Tailscale IPN'\tailscale.exe up
+#Pause
+
+## For Testing Comment out Tailscale Install and Uncomment the bellow Line
+Set-DnsClientServerAddress -InterfaceAlias * -ServerAddresses 192.168.2.95
+
 
 #Power Toys
 winget install --id Microsoft.PowerToys
