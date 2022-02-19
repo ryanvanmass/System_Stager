@@ -67,8 +67,14 @@ RunAs /User:$User_Name /savecreds "net use O: \\slave1.local\Olympus /User:$SMB_
 RunAs /User:$User_Name /savecreds "net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password"
 RunAs /User:$User_Name /savecreds "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
 
+### Set Wall Paper
+Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value Get-Location\Wallpaper.JPG
 
-
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
 
 
 
