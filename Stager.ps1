@@ -2,6 +2,10 @@
 # Version: 0
 # Author: Ryan Van Massenhoven
 
+### Introduction ###
+Write-Output "The Following will install all Essential Software"
+Pause
+
 ### Install Software ###
 # Github
 winget install --id Github.GithubDesktop
@@ -43,14 +47,18 @@ $ScreenConnect_URL = Read-Host
 # WSL
 #wsl --install
 
-
+## Clear the Screen and Continue
+Write-Output "Continueing will Clear the Screen"
+Pause
+Clear-Host
 
 
 ### Add Network Shares ###
-Write-Output "Enter Network Share Username"
+Write-Output "Adding Network Shares"
+Write-Output "Enter Network Share Username:"
 $SMB_Username = Read-Host
 
-Write-Output "Enter Network Share Password"
+Write-Output "Enter Network Share Password:"
 $SMB_Password = Read-Host
 
 $User_Name= whoami
@@ -58,4 +66,19 @@ $User_Name= whoami
 RunAs /User:$User_Name /savecreds "net use O: \\slave1.local\Olympus /User:$SMB_Username $SMB_Password"
 RunAs /User:$User_Name /savecreds "net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password"
 RunAs /User:$User_Name /savecreds "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Last Line
 Pause
