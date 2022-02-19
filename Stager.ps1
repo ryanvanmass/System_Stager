@@ -55,7 +55,7 @@ $SMB_Password = Read-Host
 
 $User_Name= whoami
 
-RunAs /User:$User_Name "net use O: \\slave1.local\Olympus /User:$SMB_Username $SMB_Password"
-RunAs /User:$User_Name "net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password"
-RunAs /User:$User_Name "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
+RunAs /User:$User_Name /savecreds "net use O: \\slave1.local\Olympus /User:$SMB_Username $SMB_Password"
+RunAs /User:$User_Name /savecreds "net use H: \\slave1.local\Hades /User:$SMB_Username $SMB_Password"
+RunAs /User:$User_Name /savecreds "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
 Pause
