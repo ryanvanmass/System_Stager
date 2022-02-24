@@ -47,6 +47,12 @@ $ScreenConnect_URL = Read-Host
 # WSL
 #wsl --install
 
+# Oh My Posh
+winget install --id JanDeDobbeleer.OhMyPosh
+Set-ExecutionPolicy Unrestricted
+New-Item -Type File -Force $PROFILE
+Write-Output "oh-my-posh --init --shell pwsh --config C:\Users\Ryan\AppData\Local\Programs\oh-my-posh\themes/microverse-power.omp.json | Invoke-Expression" >> $PROFILE
+
 ## Clear the Screen and Continue
 Write-Output "Continueing will Clear the Screen"
 Pause
@@ -68,20 +74,18 @@ RunAs /User:$User_Name /savecreds "net use H: \\slave1.local\Hades /User:$SMB_Us
 RunAs /User:$User_Name /savecreds "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
 
 ### Set Wall Paper ###
-Write-Output "Please Enter the Path to the image you would like set as Wallpaper"
-$Path = Read-Host
-Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $Path
+#Write-Output "Please Enter the Path to the image you would like set as Wallpaper"
+#$Path = Read-Host
+#Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $Path
 
 ## For Testing
-#Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $PWD\Wallpaper.JPG
+Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $PWD\Wallpaper.JPG
 
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
-
-
 
 
 
