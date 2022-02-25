@@ -50,6 +50,7 @@ $ScreenConnect_URL = Read-Host
 # Oh My Posh
 winget install --id JanDeDobbeleer.OhMyPosh
 
+Write-Output "Downloading and Installing Neccessary Files (This may Take awhile)"
 Invoke-WebRequest http://hdmi.vanmassenhoven.com/index.php/s/aNncBdbZf8fzmDc -OutFile C:\Users\$env:USERNAME\AppData\Local\Programs\oh-my-posh\themes\_CustomTheme.omp.json
 
 Invoke-WebRequest https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -OutFile Font.zip
