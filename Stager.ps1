@@ -55,6 +55,10 @@ Invoke-WebRequest http://hdmi.vanmassenhoven.com/index.php/s/aNncBdbZf8fzmDc -Ou
 Invoke-WebRequest https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -OutFile Font.zip
 Expand-Archive Font.zip -DestinationPath C:\Users\$env:USERNAME\Downloads\NerdFonts
 Remove-Item Font.zip
+Write-Output "Please Install All Fonts before Continueing"
+explorer.exe C:\Users\$env:USERNAME\Downloads\NerdFonts
+Pause
+
 
 Set-ExecutionPolicy Unrestricted
 New-Item -Type File -Force $PROFILE
