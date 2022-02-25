@@ -50,13 +50,15 @@ $ScreenConnect_URL = Read-Host
 # Oh My Posh
 winget install --id JanDeDobbeleer.OhMyPosh
 
-Invoke-WebRequest https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -OutFile Font.zip
-Expand-Archive Font.zip -DestinationPath C:\Users\$env:USERNAME\Downlads\NerdFonts
+Invoke-WebRequest http://hdmi.vanmassenhoven.com/index.php/s/aNncBdbZf8fzmDc -OutFile C:\Users\$env:USERNAME\AppData\Local\Programs\oh-my-posh\themes\_CustomTheme.omp.json
 
+Invoke-WebRequest https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -OutFile Font.zip
+Expand-Archive Font.zip -DestinationPath C:\Users\$env:USERNAME\Downloads\NerdFonts
+Remove-Item Font.zip
 
 Set-ExecutionPolicy Unrestricted
 New-Item -Type File -Force $PROFILE
-Write-Output "oh-my-posh --init --shell pwsh --config C:\Users\ryan\AppData\Local\Programs\oh-my-posh\themes/microverse-power.omp.json | Invoke-Expression" >> $PROFILE
+Write-Output "oh-my-posh --init --shell pwsh --config C:\Users\$Env:Username\AppData\Local\Programs\oh-my-posh\themes/_CustomTheme.omp.json | Invoke-Expression" >> $PROFILE
 
 ## Clear the Screen and Continue
 Write-Output "Continueing will Clear the Screen"
