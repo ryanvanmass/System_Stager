@@ -39,11 +39,16 @@ winget install --id Famatech.AdvancedIPScanner
 
 # UltraVNC
 Invoke-WebRequest https://www.uvnc.eu/download/1381/UltraVNC_1_3_81_X64_Setup.exe -OutFile UltraVNC.exe
+Write-Output "Please Install UltraVNC"
 .\UltraVNC.exe
 Pause
 Remove-Item UltraVNC.exe
 
-#
+# Microsoft Office
+winget install --id Microsoft.Office
+
+# Gimp
+winget install --id Gimp.Gimp
 
 # Screen Connect
 Write-Output "Please Enter ScreenConnect Instance domain (https://***.screenconnect.com)"
