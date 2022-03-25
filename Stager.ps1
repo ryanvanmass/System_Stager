@@ -19,12 +19,6 @@ winget install --id Google.Chrome
 # Parsec
 winget install --id Parsec.Parsec
 
-# Tailscale Tail 
-winget install --id Tailscale.Tailscale
-
-## For Testing Comment out Tailscale Install and Uncomment the bellow Line
-Set-DnsClientServerAddress -InterfaceAlias * -ServerAddresses 192.168.2.95
-
 #Power Toys
 winget install --id Microsoft.PowerToys
 
@@ -48,6 +42,8 @@ Invoke-WebRequest https://www.uvnc.eu/download/1381/UltraVNC_1_3_81_X64_Setup.ex
 .\UltraVNC.exe
 Pause
 Remove-Item UltraVNC.exe
+
+#
 
 # Screen Connect
 Write-Output "Please Enter ScreenConnect Instance domain (https://***.screenconnect.com)"
