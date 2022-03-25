@@ -20,11 +20,7 @@ winget install --id Google.Chrome
 winget install --id Parsec.Parsec
 
 # Tailscale Tail 
-#winget install --id Tailscale.Tailscale
-#Write-Output "Please Log Into Tailscale Before procceding"
-
-#C:\'Program Files (x86)'\'Tailscale IPN'\tailscale.exe up
-#Pause
+winget install --id Tailscale.Tailscale
 
 ## For Testing Comment out Tailscale Install and Uncomment the bellow Line
 Set-DnsClientServerAddress -InterfaceAlias * -ServerAddresses 192.168.2.95
@@ -38,6 +34,21 @@ winget install sysinternals
 # Git CLI for Windows
 winget install --id Git.Git
 
+# WinSCP
+winget install --id winscp.winscp
+
+# Putty
+winget install --id Putty.Putty
+
+# Advanced IP Scanner
+winget install --id Famatech.AdvancedIPScanner
+
+# UltraVNC
+Invoke-WebRequest https://www.uvnc.eu/download/1381/UltraVNC_1_3_81_X64_Setup.exe -OutFile UltraVNC.exe
+.\UltraVNC.exe
+Pause
+Remove-Item UltraVNC.exe
+
 # Screen Connect
 Write-Output "Please Enter ScreenConnect Instance domain (https://***.screenconnect.com)"
 $ScreenConnect_URL = Read-Host
@@ -45,7 +56,7 @@ $ScreenConnect_URL = Read-Host
 [system.Diagnostics.Process]::Start("chrome","https://$ScreenConnect_URL.screenconnect.com")
 
 # WSL
-#wsl --install
+wsl --install
 
 # Oh My Posh
 winget install --id JanDeDobbeleer.OhMyPosh
@@ -86,11 +97,6 @@ RunAs /User:$User_Name /savecreds "net use H: \\slave1.local\Hades /User:$SMB_Us
 RunAs /User:$User_Name /savecreds "net use D: \\slave3.local\Dev /User:$SMB_Username $SMB_Password"
 
 ### Set Wall Paper ###
-#Write-Output "Please Enter the Path to the image you would like set as Wallpaper"
-#$Path = Read-Host
-#Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $Path
-
-## For Testing
 Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -Name wallpaper -Value $PWD\Wallpaper.JPG
 
 rundll32.exe user32.dll, UpdatePerUserSystemParameters
