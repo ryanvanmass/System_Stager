@@ -38,6 +38,7 @@ winget install --id Putty.Putty
 winget install --id Famatech.AdvancedIPScanner
 
 # UltraVNC
+# The Reason i am not using winget is so that you have control over which components of UltraVNC are installed
 Invoke-WebRequest https://www.uvnc.eu/download/1381/UltraVNC_1_3_81_X64_Setup.exe -OutFile UltraVNC.exe
 Write-Output "Please Install UltraVNC"
 .\UltraVNC.exe
