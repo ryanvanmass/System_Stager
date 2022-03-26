@@ -1,5 +1,5 @@
 # Name: Windows System Stager
-# Version: 0
+# Version: V1RC1
 # Author: Ryan Van Massenhoven
 
 ### Introduction ###
