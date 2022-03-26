@@ -57,7 +57,9 @@ $ScreenConnect_URL = Read-Host
 [system.Diagnostics.Process]::Start("chrome","https://$ScreenConnect_URL.screenconnect.com")
 
 # WSL
-wsl --install
+Start-Process -FilePath cmd 'wsl --install'
+Write-Output "Please Complete WSL Install before Proceeding"
+Pause
 
 # Oh My Posh
 winget install --id JanDeDobbeleer.OhMyPosh
